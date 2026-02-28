@@ -1,0 +1,140 @@
+/* =========================================
+   LAYOUT DO MINIGAME
+========================================= */
+
+/* Centraliza o card do jogo exatamente no meio da tela */
+.minigame-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 64px; /* Compensa a altura da Navbar */
+}
+
+/* Ajustes específicos do card do jogo */
+.minigame-card {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 48px 32px;
+}
+
+.minigame-icon {
+    font-size: 2.5rem;
+    padding: 16px;
+    margin-bottom: 8px;
+    display: inline-flex;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.sub-titulo {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* =========================================
+   INPUT E BOTÃO
+========================================= */
+.card-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.input-premium {
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 9999px; /* Formato de pílula arredondado */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-white);
+    font-size: 1.125rem;
+    font-family: var(--font-main);
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+    transition: var(--transition);
+}
+
+.input-premium::placeholder {
+    color: rgba(161, 161, 170, 0.5); /* Cor sutil para o placeholder */
+    font-weight: 400;
+}
+
+.input-premium:focus {
+    border-color: var(--brand-color);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.1);
+}
+
+/* Remove as setinhas feias padrão do input type number */
+.input-premium::-webkit-outer-spin-button,
+.input-premium::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input-premium[type=number] {
+    -moz-appearance: textfield;
+}
+
+.submete {
+    width: 100%;
+    justify-content: center; /* Centraliza o texto do botão flex */
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+/* =========================================
+   MENSAGENS DE FEEDBACK (Acerto/Erro)
+========================================= */
+.mensagem-jogo {
+    margin-top: 8px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    width: 100%;
+    animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Quando o usuário acerta (Verde) */
+.mensagem-jogo.acerto {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* Quando o usuário erra (Vermelho) */
+.mensagem-jogo.errado {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Quando é uma dica, ex: "Tente um número maior!" (Amarelo) */
+.mensagem-jogo.dica {
+    background: rgba(250, 204, 21, 0.1);
+    color: var(--brand-color);
+    border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+/* Animação suave para a mensagem aparecer */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}   

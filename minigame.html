@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minigame | Mateus H. Martins</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="icon" type="image/x-icon" href="img/icone.png">
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/minigame.css">
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <nav class="navbar nav-glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Mateus<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#skills">Stack</a>
+                <a href="index.html#projetos">Projetos</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="index.html" class="btn-contact"><i class="ph ph-arrow-left"></i> Voltar</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="minigame-wrapper container">
+        
+        <div class="premium-card minigame-card animate-fade-in">
+            
+            <div class="card-icon brand minigame-icon"><i class="ph ph-game-controller"></i></div>
+            
+            <div class="card-text">
+                <h1 class="titulo">Adivinhe o Número!</h1>
+                <p class="sub-titulo">Tente adivinhar o número secreto entre 1 e 100.</p>
+            </div>
+
+            <div class="card-input-group">
+                <input id="number" type="number" aria-label="Digite um número" placeholder="Ex: 42" class="input-premium" />
+                <button class="btn-primary btn-glow submete">Testar Sorte</button>
+            </div>
+
+            <p id="mensagem" class="mensagem-jogo" style="display: none;"></p>
+
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
